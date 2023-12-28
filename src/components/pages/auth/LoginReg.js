@@ -1,7 +1,6 @@
 import { Grid, Card, Tabs, Tab, Box } from '@mui/material';
 import { useState } from 'react';
 import Pic1 from '../../images/pic1.png'
-import Registration from './Registration';
 import UserLogin from './UserLogin';
 const TabPanel = (props) => {
   const { children, value, index } = props;
@@ -36,15 +35,12 @@ const TabPanel = (props) => {
             <Box sx={{ borderBottom:1, borderColor: 'divider' }}>
               <Tabs value={value} textColor='secondary' indicatorColor='secondary' onChange={handleChange}>
                 <Tab label='Login' sx={{ textTransform: 'none', fontWeight: 'bold' }}></Tab>
-                <Tab label='Registration' sx={{ textTransform: 'none', fontWeight: 'bold' }}></Tab>
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
               <UserLogin />
             </TabPanel>
-            <TabPanel value={value} index={1}>
-              <Registration />
-            </TabPanel>
+            
           </Box>
         </Card>
       </Grid>

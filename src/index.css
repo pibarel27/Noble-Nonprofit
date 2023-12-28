@@ -12,12 +12,15 @@
 html, body {
     width: 100%;
     height: 100%;
+    background-color:#EEF5FF;
+
 }
 
 body::-webkit-scrollbar,
 .box-item::-webkit-scrollbar,
 .search-box::-webkit-scrollbar{
     width: 8px;
+    
 }
 
 main {

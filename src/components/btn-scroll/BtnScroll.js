@@ -13,7 +13,7 @@ export function BtnScroll() {
 
     return (
         <button
-            className='fixed bottom-8 right-4 bg-black text-white rounded-full w-[30px] h-[30px] md:w-[40px] md:h-[40px] md:right-8 md:bottom-8'
+            className='fixed bottom-8 right-4 bg-black text-white rounded-full w-[50px] h-[50px] md:w-[50px] md:h-[50px] md:right-8 md:bottom-8'
             onClick={topClick}
         >
             <FontAwesomeIcon icon={faCaretUp}/>

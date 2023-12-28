@@ -6,9 +6,7 @@ import {ProductDetailItem} from "../components/product-detail-item/ProductDetail
 
 export function ProductOverView() {
     const {id} = useContext(Context)
-
     const {data:product, error, isLoading, refetch, status} = useGetProductByIdQuery(id)
-
     return (
         <div className='container max-w-[1240px] mx-auto mt-[70px] flex-auto'>
             { error && <p className='text-center pt-4'>{error.error}</p> }

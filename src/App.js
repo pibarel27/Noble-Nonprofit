@@ -10,6 +10,9 @@ import Dashboard from "./components/pages/Dashboard"
 import LoginReg from "./components/pages/auth/LoginReg"
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail"
 import Registration from "./components/pages/auth/Registration"
+import Donation from "./components/pages/auth/profile"
+import ResetPassword from "./components/pages/auth/ResetPassword"
+import Notification from "./components/pages/noti/notification"
 
 export default function App() {
     const productId = {id: 0}
@@ -26,6 +29,9 @@ export default function App() {
                     <Route path="/Registration" element={<Registration />} />
                     <Route path="/ProductOverView" element={<ProductOverView/>} />
                     <Route path="/sendPasswordResetEmail" element={<SendPasswordResetEmail/>} />
+                    <Route path="/ResetPassword"element={<ResetPassword/>}/>
+                    <Route path="/donate" element={<Donation/>} />
+                    <Route path="/notification" element={<Notification/>} />
                 </Routes>
                 <BtnScroll />
                 <Footer/>
