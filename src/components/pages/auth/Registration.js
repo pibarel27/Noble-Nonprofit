@@ -44,7 +44,7 @@ const Registration = () => {
       }}>
       </Grid>
       <Grid item lg={5} sm={7} xs={12}>
-    <Box component='form' noValidate sx={{ mt:1, mb:1, px: 2}} id='registration-form' onSubmit={handleSubmit}>
+    <Box component='form' noValidate sx={{ mt:5, mb:1, px: 2}} id='registration-form' onSubmit={handleSubmit}>
       <TextField className='w-full' margin='normal'  required  id='name' name='name' label='Name' /> <br></br>
       <TextField className='w-full' margin='normal' required  id='email' name='email' label='Email Address' /> <br></br>
       <TextField className='w-full' margin='normal' required  id='password' name='password' label='Password' type='password' /> <br></br>
