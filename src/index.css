@@ -32,7 +32,7 @@ main {
 body::-webkit-scrollbar-thumb,
 .box-item::-webkit-scrollbar-thumb,
 .search-box::-webkit-scrollbar-thumb{
-    background-color: #a25555;
+    background-color: #808080;
     border-radius: 20px;
 }
 
