@@ -28,7 +28,7 @@ export function CartShopping({cart}) {
             <div onClick={closeCartOnBg} dataset='box-cart' style={{backgroundColor: 'rgba(107, 114, 128, 0.5)'}} className='fixed left-0 top-0 right-0 bottom-0 z-[1] flex flex-col items-center justify-center shadow-2xl'>
                 <div className='bg-white mx-4 rounded-lg w-[95%] sm:w-[500px] sm:mx-0 md:w-[700px] lg:w-[900px]'>
                     <div className='flex justify-between items-center p-3 border-b'>
-                        <span className='text-lg sm:text-xl'>Bag</span>
+                        <span className='text-lg sm:text-xl'>Inventory</span>
                         <button onClick={toggleClose}>
                             <FontAwesomeIcon className='text-gray-500 hover:text-gray-600 transition' icon={faX} />
                         </button>

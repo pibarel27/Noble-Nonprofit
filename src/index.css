@@ -7,12 +7,12 @@
     input[type="number"]::-webkit-outer-spin-button {
         @apply appearance-none;
     }
-}
+}x
 
 html, body {
     width: 100%;
     height: 100%;
-    background-color:#EEF5FF;
+    background-color:#f8f9fa;
 
 }
 
@@ -32,7 +32,7 @@ main {
 body::-webkit-scrollbar-thumb,
 .box-item::-webkit-scrollbar-thumb,
 .search-box::-webkit-scrollbar-thumb{
-    background-color: #ccc;
+    background-color: #a25555;
     border-radius: 20px;
 }
 
