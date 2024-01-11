@@ -3,7 +3,7 @@ import {useGetProductsAllQuery} from "../redux/products/products.api"
 import {ProductItem} from "../components/product-item/ProductItem"
 import {Loader} from "../components/loader/Loader"
 import {ProductFilters} from "../components/product-filters/ProductFilters"
-import {useSelector} from "react-redux"
+import {useSelector} from "react-redux" 
 
 export function HomePage() {
     const { data, error, isLoading, status } = useGetProductsAllQuery()

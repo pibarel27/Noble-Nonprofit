@@ -6,13 +6,13 @@ import {ProductOverView} from "./home/ProductOverView"
 import {Header} from "./components/header/Header"
 import {Footer} from "./components/footer/Footer"
 import {BtnScroll} from "./components/btn-scroll/BtnScroll"
-import Dashboard from "./components/pages/Dashboard"
+import Dashboard from "./components/Dashboard/Dashboard"
 import LoginReg from "./components/pages/auth/LoginReg"
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail"
 import Registration from "./components/pages/auth/Registration"
-import Donation from "./components/pages/auth/profile"
+import Donation from "./components/pages/auth/donate"
 import ResetPassword from "./components/pages/auth/ResetPassword"
-import Notification from "./components/pages/noti/notification"
+import NotificationPage from "./components/pages/noti/notification"
 
 export default function App() {
     const productId = {id: 0}
@@ -31,7 +31,7 @@ export default function App() {
                     <Route path="/sendPasswordResetEmail" element={<SendPasswordResetEmail/>} />
                     <Route path="/ResetPassword"element={<ResetPassword/>}/>
                     <Route path="/donate" element={<Donation/>} />
-                    <Route path="/notification" element={<Notification/>} />
+                    <Route path="/notification" element={<NotificationPage/>} />
                 </Routes>
                 <BtnScroll />
                 <Footer/>
@@ -39,4 +39,3 @@ export default function App() {
         </main>
     )
 }
-

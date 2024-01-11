@@ -28,6 +28,7 @@ const UserLogin = () => {
   }
 
   return <>
+  <div>
     <Box  component='form' noValidate sx={{ mt:5}} id='login-form' onSubmit={handleSubmit}>
     <img className='w-[100px] h-[10px] m-auto sm:h-[100px]' src={lopic} alt='profile'/>
       <TextField margin='normal' required fullWidth id='email' name='email' label='username' />
@@ -43,6 +44,7 @@ const UserLogin = () => {
       </Box>
       {error.status ? <Alert severity={error.type} sx={{ mt: 3 }}>{error.msg}</Alert> : ''}
     </Box>
+  </div>
   </>;
 };
 

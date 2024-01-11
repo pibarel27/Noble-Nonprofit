@@ -26,10 +26,13 @@ const SendPasswordResetEmail = () => {
     }
   }
   return <>
-    <Grid container justifyContent='center'>
-      <Grid item sm={6} xs={12}>
-        <Box component='form' noValidate sx={{ mt:10 }} id='password-reset-email-form' onSubmit={handleSubmit}>
-         <h1>Forgot your password</h1>
+  <div className="min-h-screen mt-20 bg-gray-100 flex flex-col justify-self-auto items-center">
+    <div className="max-w-md w-full p-5 bg-white shadow-lg rounded-lg">
+      <h3 className="text-3xl font-semibold mb-4">Reset your password</h3>
+      <p>Enter an email that associate wuth your account</p>
+    <Grid container  sx={{ height: '20vh' }} justifyContent='center'>
+      <Grid item sm={20} xs={12}>
+        <Box component='form' noValidate id='password-reset-email-form' onSubmit={handleSubmit}>
           <TextField margin='normal' required fullWidth id='email' name='email' label='Email Address' />
           <Box textAlign='center'>
             <Button type='submit' variant='contained' sx={{ mt: 3, mb: 2, px: 5 }}onClick={goToReset}>Next</Button>
@@ -38,6 +41,8 @@ const SendPasswordResetEmail = () => {
         </Box>
       </Grid>
     </Grid>
+     </div>
+  </div>
   </>;
 };
 

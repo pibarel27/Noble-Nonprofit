@@ -20,7 +20,7 @@ const TabPanel = (props) => {
     setValue(newValue);
   }
   return <>
-    <Grid container sx={{ height: '120vh' }}>
+    <Grid container sx={{ height: '100vh' }}>
       <Grid item lg={7} sm={8} sx={{
         backgroundImage: `url(${Pic1})`,
         backgroundRepeat: 'no-repeat',
@@ -40,7 +40,6 @@ const TabPanel = (props) => {
             <TabPanel value={value} index={0}>
               <UserLogin />
             </TabPanel>
-            
           </Box>
         </Card>
       </Grid>

@@ -21,7 +21,7 @@ const ResetPassword = () => {
         document.getElementById('password-reset-form').reset()
         setError({ status: true, msg: "Password Reset Successfully. Redirecting to Login Page...", type: 'success' })
         setTimeout(() => {
-          navigate("/login")
+          navigate("/loginReg")
         }, 3000)
       } else {
         setError({ status: true, msg: "Password and Confirm Password Doesn't Match", type: 'error' })
@@ -31,10 +31,13 @@ const ResetPassword = () => {
     }
   }
   return <>
-    <Grid container justifyContent='center'>
-      <Grid item sm={6} xs={12}>
-        <h1>Reset Password</h1>
-        <Box component='form' noValidate sx={{ mt: 10 }} id='password-reset-form' onSubmit={handleSubmit}>
+  <div className="min-h-screen mt-10 bg-gray-100 flex flex-col justify-self-auto items-center">
+    <div className="max-w-md w-full p-5 bg-white shadow-lg rounded-lg">
+    <h3 className="text-3xl font-semibold mb-4">Reset password</h3>
+    <p>Your password must be at least six characters and should include a combination of numbers, letters and special characters (!$@%).</p>
+    <Grid container  sx={{ height: '30vh' }} justifyContent='center'>
+      <Grid item sm={15} xs={20}>
+        <Box component='form' noValidate id='password-reset-form' onSubmit={handleSubmit}>
           <TextField margin='normal' required fullWidth id='password' name='password' label='New Password' type='password' />
           <TextField margin='normal' required fullWidth id='password_confirmation' name='password_confirmation' label='Confirm New Password' type='password' />
           <Box textAlign='center'>
@@ -44,6 +47,8 @@ const ResetPassword = () => {
         </Box>
       </Grid>
     </Grid>
+    </div>
+    </div>
   </>;
 };
 

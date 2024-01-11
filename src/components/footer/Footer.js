@@ -3,9 +3,9 @@ import React from "react"
 export function Footer() {
     return (
         
-        <footer className=' text-white class="w-full h-34 bg-[#176B87] static bottom-0"'>
+        <footer className='  text-white class="w-full h-34 bg-[#176B87] static bottom-0"'>
      
-            <div className='max-w-[1240px] mx-auto py-2 text-sm sm:text-base'>
+            <div className='  max-w-[1240px] mx-auto py-2 text-sm sm:text-base'>
                 
                 <div className='flex justify-center flex-col items-center'>
                     <p className='text-center'>© Copyright 2023 Chingu Pvt. Ltd. | All Rights Reserved</p>
