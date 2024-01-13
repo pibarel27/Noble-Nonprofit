@@ -1,19 +1,24 @@
-import React from 'react';
-function Notification({ notifications }) {
+import React, { useRef } from 'react';
+import {X} from 'lucide-react'
+const Notification = ({onClose}) => {
+  
+  const modalRef= useRef();
+  const closeModal =(e) =>{
+  if(modalRef.current===e.target){
+    onClose();
+  }
+}
+
   return (
-    <div className="fixed top-0 right-0 p-4 z-50">
-      <div className="bg-white shadow-md p-4 rounded-md">
-        <h2 className="text-xl font-bold mb-4">NOTIFICATION</h2>
-        {notifications.map(function (notification) {
-          return (
-            <div key={notification.id} className="bg-gray-100 p-2 mb-2 rounded-md">
-              <p className="text-gray-700">{notification.message}</p>
-            </div>
-          );
-        })}
+    <div ref={modalRef} onClick={closeModal} dataset='Modal' className="mt-8 fixed inset-0 bf-opacity-30 backdrop-blur-sm flex justify-end item-center">
+      <div  className=" mt-10 flex flex-col gap-5 item-center mx-4">
+      <button onClick={onClose} className="place-self-end"><X size={30}/></button>
+      <div className=" round-xl shadow-lg px-20 py-10 flex flex-col gap-5 item-center mx-4">
+        <h1 className="text-3xl text-black font-semibold mb-4">Notification</h1>
+      </div>
       </div>
     </div>
   );
-}
+};
 
 export default Notification;

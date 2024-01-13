@@ -1,33 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function Location() {
-  const [position, setPosition] = useState({ latitude: null, longitude: null });
+const LocationComponent = () => {
+  const [userLocation, setUserLocation] = useState(null);
 
-  useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        setPosition({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
-      });
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error('Error getting location:', error.message);
+        }
+      );
     } else {
-      console.log("Geolocation is not available in your browser.");
+      console.error('Geolocation is not supported by this browser.');
     }
-  }, []);
+  };
 
   return (
     <div>
-      <h2>My Current Location</h2>
-      {position.latitude && position.longitude ? (
-        <p>
-          Latitude: {position.latitude}, Longitude: {position.longitude}
-        </p>
-      ) : (
-        <p>Loading...</p>
+      <button onClick={getLocation}>Get Location</button>
+
+      {userLocation && (
+        <div>
+          <p>Latitude: {userLocation.latitude}</p>
+          <p>Longitude: {userLocation.longitude}</p>
+        </div>
       )}
     </div>
   );
-}
+};
 
-export default Location;
+export default LocationComponent;

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import {X} from 'lucide-react'
 
-const Donate = () => {
+const Donate = ({onClose}) => {
   const [selectedFile, setSelectedFile] = useState(null);
-
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -14,11 +14,19 @@ const Donate = () => {
      
     }
   };
+  const modalRef= useRef();
+  const closeModal =(e) =>{
+  if(modalRef.current===e.target){
+    onClose();
+  }
+}
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
-      <div className="max-w-md w-full p-8 bg-white shadow-lg rounded-lg">
-        <h1 className="text-3xl font-semibold mb-4">Donate</h1>
+    <div ref={modalRef} onClick={closeModal} dataset='Modal' className="mt-8 fixed inset-0 bf-opacity-30 backdrop-blur-sm flex justify-center item-center">
+      <div  className=" mt-10 flex flex-col gap-5 item-center mx-4">
+      <button onClick={onClose} className="place-self-end"><X size={30}/></button>
+      <div className=" round-xl shadow-lg px-20 py-10 flex flex-col gap-5 item-center mx-4">
+        <h1 className="text-3xl text-black font-semibold mb-4">Donate</h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block mb-1 font-semibold">Product Details</label>
@@ -53,11 +61,11 @@ const Donate = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
-          >
+            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">
             Donate
           </button>
         </form>
+      </div>
       </div>
     </div>
   );

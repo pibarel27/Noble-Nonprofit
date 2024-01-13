@@ -1,6 +1,6 @@
 import React from "react"
 import {Context} from "./context/context"
-import {Route, Routes} from "react-router-dom"
+import {Route,Routes} from "react-router-dom"
 import {HomePage} from "./home/HomePage"
 import {ProductOverView} from "./home/ProductOverView"
 import {Header} from "./components/header/Header"
@@ -10,12 +10,11 @@ import Dashboard from "./components/Dashboard/Dashboard"
 import LoginReg from "./components/pages/auth/LoginReg"
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail"
 import Registration from "./components/pages/auth/Registration"
-import Donation from "./components/pages/auth/donate"
+import Donation from "./components/Dashboard/donate"
 import ResetPassword from "./components/pages/auth/ResetPassword"
-import NotificationPage from "./components/pages/noti/notification"
-
 export default function App() {
     const productId = {id: 0}
+    
 
     return (
         <main>
@@ -31,7 +30,6 @@ export default function App() {
                     <Route path="/sendPasswordResetEmail" element={<SendPasswordResetEmail/>} />
                     <Route path="/ResetPassword"element={<ResetPassword/>}/>
                     <Route path="/donate" element={<Donation/>} />
-                    <Route path="/notification" element={<NotificationPage/>} />
                 </Routes>
                 <BtnScroll />
                 <Footer/>
