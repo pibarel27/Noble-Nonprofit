@@ -1,6 +1,6 @@
 import { TextField, Button, Box, Alert } from '@mui/material';
 import { useState } from 'react';
-import lopic from "../../images/lopic.png"
+import pro from "../../images/pro.png"
 import { NavLink, useNavigate } from 'react-router-dom';
 const UserLogin = () => {
   const [error, setError] = useState({
@@ -21,16 +21,15 @@ const UserLogin = () => {
       console.log(actualData);
       document.getElementById('login-form').reset()
       setError({ status: true, msg: "Login Success", type: 'success' })
-      navigate('/dashboard')
+      navigate('/HomePage')
     } else {
       setError({ status: true, msg: "All Fields are Required", type: 'error' })
     }
   }
 
   return <>
-  <div>
-    <Box  component='form' noValidate sx={{ mt:5}} id='login-form' onSubmit={handleSubmit}>
-    <img className='w-[100px] h-[10px] m-auto sm:h-[100px]' src={lopic} alt='profile'/>
+    <Box component='form' noValidate sx={{ mt:3}} id='login-form' onSubmit={handleSubmit}>
+    <img className='w-auto h-auto m-auto sm:h-[100px]' src={pro} alt='profile'/>
       <TextField margin='normal' required fullWidth id='email' name='email' label='username' />
       <TextField margin='normal' required fullWidth id='password' name='password' label='Password' type='password' />
       <Box textAlign='center'>
@@ -38,13 +37,12 @@ const UserLogin = () => {
         <br></br>
         <NavLink to='/sendpasswordresetemail' >Forgot Password ?</NavLink>
         <br></br>
-        <Button variant='contained' sx={{ mt:2, mb:0.5, px: 4 }}>
+        <Button variant='contained' sx={{ mt:2, mb:0.5, px:4 }}>
         <NavLink to='/Registration' >Create new account</NavLink>
         </Button>
       </Box>
       {error.status ? <Alert severity={error.type} sx={{ mt: 3 }}>{error.msg}</Alert> : ''}
     </Box>
-  </div>
   </>;
 };
 

@@ -1,12 +1,19 @@
+import React, { useRef } from 'react';
 import { Grid, TextField, Button, Box, Alert } from "@mui/material";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-const SendPasswordResetEmail = () => {
+const SendPasswordResetEmail = ({onClose}) => {
   const [error, setError] = useState({
     status: false,
     msg: "",
     type: ""
   })
+  const modalRef= useRef();
+  const closeModal =(e) =>{
+  if(modalRef.current===e.target){
+    onClose();
+  }
+}
   const navigate = useNavigate();
   const goToReset = () => {
     navigate("/ResetPassword");
@@ -26,7 +33,7 @@ const SendPasswordResetEmail = () => {
     }
   }
   return <>
-  <div className="min-h-screen mt-20 bg-gray-100 flex flex-col justify-self-auto items-center">
+  <div ref={modalRef} onClick={closeModal} className="min-h-screen mt-20 bg-gray-100 flex flex-col justify-self-auto items-center">
     <div className="max-w-md w-full p-5 bg-white shadow-lg rounded-lg">
       <h3 className="text-3xl font-semibold mb-4">Reset your password</h3>
       <p>Enter an email that associate wuth your account</p>

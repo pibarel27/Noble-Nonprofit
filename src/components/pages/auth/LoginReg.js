@@ -1,4 +1,4 @@
-import { Grid, Card, Tabs, Tab, Box } from '@mui/material';
+import { Grid, Card, Tabs,  Box } from '@mui/material';
 import { useState } from 'react';
 import Pic1 from '../../images/pic1.png'
 import UserLogin from './UserLogin';
@@ -20,8 +20,9 @@ const TabPanel = (props) => {
     setValue(newValue);
   }
   return <>
-    <Grid container sx={{ height: '100vh' }}>
-      <Grid item lg={7} sm={8} sx={{
+  <div className=" round-xl shadow-lg px-20 py-10 flex flex-col gap-5 item-center mx-4">
+  <Grid container sx={{ height: '90vh' }}>
+     <Grid item lg={7} sm={8} sx={{
         backgroundImage: `url(${Pic1})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -34,7 +35,6 @@ const TabPanel = (props) => {
           <Box sx={{ mx: 3, height: 550 }}>
             <Box sx={{ borderBottom:1, borderColor: 'divider' }}>
               <Tabs value={value} textColor='secondary' indicatorColor='secondary' onChange={handleChange}>
-                <Tab label='Login' sx={{ textTransform: 'none', fontWeight: 'bold' }}></Tab>
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
@@ -44,6 +44,8 @@ const TabPanel = (props) => {
         </Card>
       </Grid>
     </Grid>
+  </div>
+   
   </>;
 };
 

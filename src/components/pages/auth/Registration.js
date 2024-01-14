@@ -24,7 +24,7 @@ const Registration = () => {
         console.log(actualData);
         document.getElementById('registration-form').reset()
         setError({ status: true, msg: "Registration Successful", type: 'success' })
-        navigate('../../../home/HomePage')
+        navigate('/HomePage')
       } else {
         setError({ status: true, msg: "Password and Confirm Password Doesn't Match", type: 'error' })
       }

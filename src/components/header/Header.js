@@ -19,13 +19,13 @@ export function Header() {
         ? document.querySelector('body').style.overflow = 'hidden'
         : document.querySelector('body').style.overflow = 'visible'
     const goToLoginReg = () => {
-        navigate("/LoginReg");
+        navigate("/Dashboard");
     }
     const[showModal, setShowModal]= useState(false);
     return (
         <header className='w-screen bg-[#176B87] fixed z-10 top-0 h-[50px]'>
             <div className='container text-lg flex justify-between items-center  text-white h-[50px] max-w-[1240px] m-auto px-2'>
-                <a href='/'><img className='w-[50px] h-[50px] ' src={logo} alt='profile'/>
+                <a href='/HomePage'><img className='w-[50px] h-[50px] ' src={logo} alt='profile'/>
                 </a>
                 <Search />
                 <ul className='flex justify-between'>
