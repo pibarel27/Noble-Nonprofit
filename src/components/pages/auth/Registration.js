@@ -33,7 +33,7 @@ const Registration = () => {
     }
   }
   return <>
-  <Grid container sx={{ height: '100vh' }}>
+  <Grid container sx={{ height: '92vh' }}>
   <Grid item lg={7} sm={8} sx={{
         backgroundImage: `url(${pic1})`,
         backgroundRepeat: 'no-repeat',

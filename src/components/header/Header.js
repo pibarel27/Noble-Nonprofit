@@ -1,4 +1,5 @@
 import  {React, useState} from "react"
+import { useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux"
 import {toggleBtnCart, toggleSearchForm} from "../../redux/products/products.slice"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
@@ -6,7 +7,6 @@ import {faBell, faCartShopping, faSearch, faUser} from '@fortawesome/free-solid-
 import {CartShopping} from "../cart-shopping/CartShopping"
 import {Search} from "../search/Search"
 import logo from "../images/logo.png"
-import { useNavigate } from "react-router-dom";
 import Notification from "../pages/noti/notification"
 
 export function Header() {
@@ -22,6 +22,7 @@ export function Header() {
         navigate("/Dashboard");
     }
     const[showModal, setShowModal]= useState(false);
+    
     return (
         <header className='w-screen bg-[#176B87] fixed z-10 top-0 h-[50px]'>
             <div className='container text-lg flex justify-between items-center  text-white h-[50px] max-w-[1240px] m-auto px-2'>

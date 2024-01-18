@@ -2,6 +2,7 @@ import { Grid, Card, Tabs,  Box } from '@mui/material';
 import { useState } from 'react';
 import Pic1 from '../../images/pic1.png'
 import UserLogin from './UserLogin';
+import Registration from "./Registration"
 const TabPanel = (props) => {
   const { children, value, index } = props;
   return (
@@ -21,7 +22,7 @@ const TabPanel = (props) => {
   }
   return <>
   <div className=" round-xl shadow-lg px-20 py-10 flex flex-col gap-5 item-center mx-4">
-  <Grid container sx={{ height: '90vh' }}>
+  <Grid container sx={{ height: '82vh' }}>
      <Grid item lg={7} sm={8} sx={{
         backgroundImage: `url(${Pic1})`,
         backgroundRepeat: 'no-repeat',
@@ -39,6 +40,9 @@ const TabPanel = (props) => {
             </Box>
             <TabPanel value={value} index={0}>
               <UserLogin />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <Registration />
             </TabPanel>
           </Box>
         </Card>
